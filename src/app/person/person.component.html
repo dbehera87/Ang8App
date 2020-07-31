@@ -1,0 +1,23 @@
+<p>
+  person works!
+</p>
+
+<app-contact 
+[isValid]="isChildValid"
+(childEvent)="fromChildEvent($event)" 
+(childDataEvent)="fromChildDataEvent($event)" ></app-contact>
+
+
+<span> {{ childData }}</span>
+
+<button [ngClass]="{'textWhite':true , 'disable-control': !isSaveDisabled }" [disabled]="!isSaveDisabled">Save</button>
+
+<button (click)="getDataFromService()"> Get Data from Service</button>
+
+
+
+<select>
+  <option *ngFor="let p of persons">
+    {{ p.Name }} - {{ p.Age }}
+  </option>
+</select>
